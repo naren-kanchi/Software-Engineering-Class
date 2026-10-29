@@ -50,7 +50,7 @@ hits the 200 cap, a blocked borrower with a high fine, a faculty borrower, and
 one test for each of the four `renewal_status` outcomes. Every line now runs
 (100% line coverage).
 
-![Code coverage](screenshots/code_coverage.png)
+![Code coverage](screenshots/code-coverage.png)
 
 ### Branch coverage
 
@@ -74,4 +74,4 @@ condition:
 
 All 22 branches are taken (100% branch coverage).
 
-![Branch coverage](screenshots/branch_coverage.png)
+![Branch coverage](screenshots/branch-coverage.png)
