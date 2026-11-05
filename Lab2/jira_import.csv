@@ -1,0 +1,116 @@
+Issue Id,Parent Id,Issue Type,Summary,Description,Priority,Story Points,Labels
+1,,Epic,E1: Anonymous Identity & Access,"Let employees use the platform under a random pseudo-ID that can never be traced back to their corporate identity, and let therapists and admins sign in securely.
+
+Lab 1 source: FR-001, FR-006, NFR-001, UC-01",High,,Lab1
+2,,Epic,E2: Therapist Directory & Booking,"Let employees find a licensed therapist by speciality and book, reschedule or cancel a session, while therapists manage their own availability.
+
+Lab 1 source: FR-002, NFR-002, UC-03, UC-05, UC-07",High,,Lab1
+3,,Epic,E3: Counseling Sessions & Notifications,"Run telehealth counseling sessions and keep employees informed about their appointments through confirmations and reminders.
+
+Lab 1 source: UC-04, UC-08, UC-03 (step 8 / 8a)",High,,Lab1
+4,,Epic,E4: Anonymous Wellbeing Tracking,"Record how an employee feels before and after each session against their pseudo-ID only, so they can follow their own progress without ever being identified.
+
+Lab 1 source: FR-003, FR-004, FR-005",High,,Lab1
+5,,Epic,E5: HR Wellness Programme,"Give HR an aggregated, non-identifying view of the pilot's effect on the workforce and a place to share wellness resources.
+
+Lab 1 source: FR-004, UC-06",High,,Lab1
+6,1,Story,Story 1.1: Anonymous pseudo-ID on sign in,"As an employee, I want the platform to give me a random pseudo-ID when I enter it, so that I can use counseling services without my corporate email or employee ID being revealed.
+
+Acceptance criteria: A new random ID is generated in a few milliseconds; no corporate identifier is stored with it.
+
+Lab 1 source: FR-001, FR-006, NFR-001",High,5,Lab1
+7,1,Story,Story 1.2: Continue with my existing pseudo-ID,"As an employee, I want to choose to continue with a pseudo-ID I used before, so that my session history and progress stay together.
+
+Acceptance criteria: Entering a previously issued ID restores its history; nothing else links it to the employee.
+
+Lab 1 source: NFR-001, FR-003",High,3,Lab1
+8,1,Story,Story 1.3: Therapist sees pseudo-ID only,"As a therapist, I want to see only the client's pseudo-ID on my dashboard, so that the employee's identity stays confidential.
+
+Acceptance criteria: Therapist dashboard and appointment details show the pseudo-ID and no other identifier.
+
+Lab 1 source: FR-001",High,3,Lab1
+9,1,Story,Story 1.4: Therapist and admin login,"As a therapist or HR admin, I want to log in with my own account, so that only authorised staff can manage availability and the programme.
+
+Acceptance criteria: Login required for therapist and admin pages; wrong credentials are rejected.
+
+Lab 1 source: UC-01",Medium,2,Lab1
+10,2,Story,Story 2.1: Browse therapists by speciality,"As an employee, I want to browse licensed therapists filtered by speciality and availability, so that I can pick someone suited to what I need.
+
+Acceptance criteria: List shows speciality, availability and contact options; filter by speciality works.
+
+Lab 1 source: FR-002, UC-03 (step 2)",High,3,Lab1
+11,2,Story,Story 2.2: Book an available session,"As an employee, I want to choose a therapist, date, time and session mode and confirm the booking, so that I have a confirmed counseling appointment.
+
+Acceptance criteria: Booking is recorded, the slot is removed from availability and booking details are shown.
+
+Lab 1 source: UC-03 (steps 1-9)",High,8,Lab1
+12,2,Story,Story 2.3: Handle a slot that was just taken,"As an employee, I want to be told when my chosen slot is no longer free and see the latest slots, so that I can quickly pick another time instead of getting an error.
+
+Acceptance criteria: If the slot is taken during booking, a message is shown and the slot list refreshes.
+
+Lab 1 source: UC-03 (alternate flow 3a)",Medium,3,Lab1
+13,2,Story,Story 2.4: Manage my availability,"As a therapist, I want to add, change and remove my available time slots, so that employees can only book times when I can actually take sessions.
+
+Acceptance criteria: Changes appear in the booking list immediately; booked slots cannot be deleted.
+
+Lab 1 source: UC-05",High,5,Lab1
+14,2,Story,Story 2.5: Reschedule or cancel an appointment,"As an employee, I want to reschedule or cancel a booked appointment, so that I can fit counseling around my work.
+
+Acceptance criteria: Cancelled slots return to the therapist's availability; both sides see the change.
+
+Lab 1 source: UC-07",Medium,5,Lab1
+15,2,Story,Story 2.6: Show times in my own time zone,"As an employee in a global office, I want appointment times to be shown in my local time zone, so that I don't miss sessions because of time zone differences.
+
+Acceptance criteria: Times are stored in UTC and shown in the viewer's time zone for employee and therapist.
+
+Lab 1 source: NFR-002",Low,5,Lab1
+16,3,Story,Story 3.1: Join a telehealth session,"As an employee, I want to join my counseling session online from the platform, so that I can attend from wherever I am.
+
+Acceptance criteria: Join link is active at the booked time for both participants via the telemedicine service.
+
+Lab 1 source: UC-04",High,8,Lab1
+17,3,Story,Story 3.2: Booking confirmation notification,"As an employee, I want to get a confirmation when my booking is made, so that I know the appointment went through and have the details.
+
+Acceptance criteria: Confirmation is sent through the notification service right after booking.
+
+Lab 1 source: UC-08, UC-03 (step 8)",Medium,3,Lab1
+18,3,Story,Story 3.3: Retry failed notifications,"As an employee, I want my booking to stay active and be shown in the portal if the notification fails, so that a notification outage never loses my appointment.
+
+Acceptance criteria: Failed notifications are marked for retry; booking details stay visible in the portal.
+
+Lab 1 source: UC-03 (alternate flow 8a)",Low,2,Lab1
+19,3,Story,Story 3.4: Session reminders,"As an employee, I want a reminder before my session starts, so that I don't forget my appointment.
+
+Acceptance criteria: Reminder is sent a set time before the session.
+
+Lab 1 source: UC-08",Low,2,Lab1
+20,4,Story,Story 4.1: Pre- and post-session check-in,"As an employee, I want to rate how I feel before and after each session, so that the effect of each session can be measured.
+
+Acceptance criteria: Check-in is stored against the pseudo-ID only and is linked to the session.
+
+Lab 1 source: FR-004",High,5,Lab1
+21,4,Story,Story 4.2: View my progress over time,"As an employee, I want to see my check-in results over time under my pseudo-ID, so that I can follow my own long-term wellbeing.
+
+Acceptance criteria: Progress chart shows only data for the current pseudo-ID.
+
+Lab 1 source: FR-003",Medium,5,Lab1
+22,4,Story,"Story 4.3: Optional questions, no pressure","As an employee, I want every wellbeing question to be optional, so that I am never pressured into sharing more than I want to.
+
+Acceptance criteria: Every question can be skipped; skipping never blocks booking or sessions.
+
+Lab 1 source: FR-005",Medium,2,Lab1
+23,5,Story,Story 5.1: Aggregated wellbeing dashboard,"As an HR / wellness admin, I want to see aggregated pilot results and overall workforce wellbeing trends, so that I can judge the programme without singling out any employee.
+
+Acceptance criteria: Only aggregates are shown, and only for groups above a minimum size.
+
+Lab 1 source: FR-004",Medium,8,Lab1
+24,5,Story,Story 5.2: Publish wellness resources,"As an HR / wellness admin, I want to publish articles and self-help resources, so that employees have support between sessions.
+
+Acceptance criteria: Admin can add, edit and remove resources.
+
+Lab 1 source: UC-06",Low,3,Lab1
+25,5,Story,Story 5.3: Read wellness resources,"As an employee, I want to browse wellness resources anonymously, so that I can get help without booking a session.
+
+Acceptance criteria: Resources can be read without any identifying information being recorded.
+
+Lab 1 source: UC-06",Low,2,Lab1
