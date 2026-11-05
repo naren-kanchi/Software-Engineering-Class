@@ -1,0 +1,26 @@
+************* Module recruitment_tracker
+recruitment_tracker.py:4:0: C0301: Line too long (124/100) (line-too-long)
+recruitment_tracker.py:8:0: C0301: Line too long (140/100) (line-too-long)
+recruitment_tracker.py:13:0: C0301: Line too long (106/100) (line-too-long)
+recruitment_tracker.py:15:26: C0303: Trailing whitespace (trailing-whitespace)
+recruitment_tracker.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+recruitment_tracker.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+recruitment_tracker.py:7:0: C0103: Function name "addApplicant" doesn't conform to snake_case naming style (invalid-name)
+recruitment_tracker.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+recruitment_tracker.py:14:12: W0123: Use of eval (eval-used)
+recruitment_tracker.py:12:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+recruitment_tracker.py:15:4: W0612: Unused variable 'total_seen' (unused-variable)
+recruitment_tracker.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+recruitment_tracker.py:24:0: C0103: Function name "updateStatus" doesn't conform to snake_case naming style (invalid-name)
+recruitment_tracker.py:28:11: W0718: Catching too general exception Exception (broad-exception-caught)
+recruitment_tracker.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
+recruitment_tracker.py:31:0: C0103: Function name "exportReport" doesn't conform to snake_case naming style (invalid-name)
+recruitment_tracker.py:32:8: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+recruitment_tracker.py:32:8: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+recruitment_tracker.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+recruitment_tracker.py:38:0: C0103: Function name "countByStatus" doesn't conform to snake_case naming style (invalid-name)
+recruitment_tracker.py:42:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 4.47/10
+
