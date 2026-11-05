@@ -14,7 +14,8 @@ conn.execute(
 def add_applicant(name, role, expected_salary, status="applied"):
     """Insert a new applicant into the database."""
     conn.execute(
-        "INSERT INTO applicants (name, role, expected_salary, status) VALUES (?, ?, ?, ?)",
+        "INSERT INTO applicants (name, role, expected_salary, status) "
+        "VALUES (?, ?, ?, ?)",
         (name, role, expected_salary, status),
     )
     conn.commit()
@@ -23,14 +24,20 @@ def add_applicant(name, role, expected_salary, status="applied"):
 def shortlist(role, max_salary):
     """Return the names of applicants for a role whose expected salary is
     within max_salary. Returns an empty list if nobody fits."""
-    rows = conn.execute("SELECT name, expected_salary FROM applicants WHERE role = ?", (role,))
+    rows = conn.execute(
+        "SELECT name, expected_salary FROM applicants WHERE role = ?",
+        (role,),
+    )
     return [name for name, salary in rows if salary <= max_salary]
 
 
 def update_status(applicant_id, status):
     """Set the hiring status of an applicant. Returns True on success."""
     try:
-        conn.execute("UPDATE applicants SET status = ? WHERE id = ?", (status, applicant_id))
+        conn.execute(
+            "UPDATE applicants SET status = ? WHERE id = ?",
+            (status, applicant_id),
+        )
         conn.commit()
     except sqlite3.Error as error:
         conn.rollback()
@@ -38,16 +45,23 @@ def update_status(applicant_id, status):
         return False
     return True
 
+
 def export_report(path):
     """Write every applicant's name, role and status to a CSV file."""
     with open(path, "w", encoding="utf-8", newline="") as report:
         writer = csv.writer(report)
-        writer.writerows(conn.execute("SELECT name, role, status FROM applicants"))
+        writer.writerows(
+            conn.execute("SELECT name, role, status FROM applicants")
+        )
 
 
 def count_by_status(status):
     """Return how many applicants have the given status."""
-    return conn.execute("SELECT COUNT(*) FROM applicants WHERE status = ?", (status,)).fetchone()[0]
+    row = conn.execute(
+        "SELECT COUNT(*) FROM applicants WHERE status = ?",
+        (status,),
+    ).fetchone()
+    return row[0]
 
 
 def main():
